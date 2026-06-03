@@ -1,0 +1,169 @@
+/* About Page Specific Styles */
+
+/* Dropdown Navigation */
+.nav-links li {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--bg-white);
+    min-width: 180px;
+    box-shadow: var(--shadow-lg);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+.dropdown.open .dropdown-menu,
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+.dropdown-menu li {
+    padding: 0;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+.dropdown-menu a:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-blue);
+}
+
+/* Helper Classes */
+.text-primary { color: var(--primary-blue); font-weight: 700; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-40 { margin-bottom: 40px; }
+.mt-50 { margin-top: 50px; }
+
+/* About Introduction */
+.about-intro {
+    padding-bottom: 50px;
+}
+.section-title {
+    font-size: 2rem;
+}
+.about-hero-image {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+.about-hero-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+.about-role h3 {
+    font-size: 1.4rem;
+}
+
+/* Dotted Lines Component */
+.dotted-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+.dotted-lines.large {
+    gap: 20px;
+}
+.dot-line {
+    border-bottom: 2px dotted #9ca3af; /* gray-400 */
+    width: 100%;
+    height: 2px;
+}
+
+/* Dark Separator */
+.dark-separator {
+    height: 40px;
+    background-color: #333333;
+    width: 100%;
+}
+
+/* Duties Section */
+.duties-section {
+    padding-top: 60px;
+}
+.duties-card {
+    background: #e5e7eb; /* a distinct light gray based on mockup */
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: none; /* remove hover shadow to match static card look */
+    border: none;
+}
+.duties-card:hover {
+    transform: none; /* disable hover scale */
+    box-shadow: none;
+}
+.duties-card h3 {
+    font-size: 1.4rem;
+}
+
+/* Dotted List Component */
+.dotted-list {
+    list-style: none;
+    padding-left: 10px;
+}
+.dotted-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+.dotted-list li::before {
+    content: "•";
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-right: 15px;
+    display: block;
+    margin-top: -5px;
+}
+.dotted-list .dotted-lines {
+    flex: 1;
+    gap: 15px;
+}
+.dotted-list.single-line li {
+    margin-bottom: 15px;
+}
+.dotted-list.single-line li .dot-line {
+    margin-top: 8px;
+}
+
+/* Rights Section */
+.rights-section {
+    background-color: var(--bg-white);
+    padding-top: 60px;
+}
+.rights-content {
+    max-width: 1000px;
+}
+.rights-content h3 {
+    font-size: 1.4rem;
+}
+
+/* Adjustments for Hero on About Page if needed */
+.hero-about {
+    height: 350px; /* Mockup shows a shorter hero */
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .duties-card {
+        padding: 30px 20px;
+    }
+    .about-hero-image img {
+        max-height: 300px;
+    }
+}

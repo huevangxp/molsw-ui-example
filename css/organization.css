@@ -1,0 +1,254 @@
+/* Organization Chart Styles */
+
+.org-chart-section {
+    padding: 60px 0;
+    background-color: var(--bg-white);
+}
+
+/* Custom Hero Styles for Organization Page */
+.hero-sectors .slide-content {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-sectors .slide-content h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+.hero-sectors .slide-content p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 15px auto 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.org-title {
+    font-size: 2rem;
+    color: var(--secondary-blue);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.org-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* Base Card Style */
+.org-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.org-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-yellow);
+}
+
+.org-card-img {
+    width: 100%;
+    height: 150px;
+    flex-shrink: 0;
+    background-color: #f3f4f6;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.org-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.org-card:hover .org-card-img img {
+    transform: scale(1.05);
+}
+
+.org-card-info {
+    padding: 20px 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.org-card-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--secondary-blue);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.org-card-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Empty placeholder cards for structure if needed */
+.org-card.placeholder {
+    visibility: hidden;
+}
+
+/* Adjustments for different card structures */
+.org-card.empty-box {
+    background: var(--bg-light);
+    border: 2px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    min-height: 250px;
+}
+
+.org-card.empty-box:hover {
+    border-color: var(--accent-yellow);
+    background-color: var(--bg-white);
+}
+
+.org-card.empty-box .org-card-info {
+    padding: 0;
+}
+
+.org-card.empty-box .org-card-name {
+    color: var(--text-muted);
+}
+
+/* Horizontal Card Layout (Minister / Vice Ministers) */
+.org-card.horizontal {
+    flex-direction: row;
+    width: 360px;
+    height: 150px;
+    align-items: stretch;
+}
+
+.org-card.horizontal .org-card-img {
+    width: 130px;
+    height: 100%;
+    border-bottom: none;
+    border-right: 1px solid var(--border-color);
+}
+
+.org-card.horizontal .org-card-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.org-card.horizontal.empty-box {
+    width: 360px;
+    height: 150px;
+    min-height: auto;
+}
+
+.org-card.horizontal.empty-box .org-card-info {
+    text-align: center;
+    width: 100%;
+}
+
+/* Specific alignments and responsive */
+@media (max-width: 1200px) {
+    .org-card {
+        width: 220px;
+    }
+    .org-card-img {
+        height: 130px;
+    }
+    .org-card.empty-box {
+        min-height: 220px;
+    }
+    .org-card.horizontal {
+        width: 300px;
+        height: 130px;
+    }
+    .org-card.horizontal .org-card-img {
+        width: 110px;
+    }
+    .org-card.horizontal.empty-box {
+        width: 300px;
+        height: 130px;
+    }
+}
+@media (max-width: 992px) {
+    .org-row {
+        gap: 10px;
+    }
+    .org-card {
+        width: 180px;
+    }
+    .org-card-img {
+        height: 115px;
+    }
+    .org-card.empty-box {
+        min-height: 190px;
+    }
+    .org-card-name {
+        font-size: 0.85rem;
+    }
+    .org-card-title {
+        font-size: 0.7rem;
+    }
+    .org-card.horizontal {
+        width: 290px;
+        height: 120px;
+    }
+    .org-card.horizontal .org-card-img {
+        width: 100px;
+    }
+    .org-card.horizontal.empty-box {
+        width: 290px;
+        height: 120px;
+    }
+}
+@media (max-width: 768px) {
+    .org-row {
+        gap: 20px;
+    }
+    .org-card {
+        width: 100%;
+        max-width: 280px;
+    }
+    .org-card-img {
+        height: 180px;
+    }
+    .org-card.empty-box {
+        min-height: auto;
+    }
+    .org-card.horizontal {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+    .org-card.horizontal .org-card-img {
+        width: 100%;
+        height: 180px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .org-card.horizontal .org-card-info {
+        text-align: center;
+        padding: 20px 15px;
+    }
+    .org-card.horizontal.empty-box {
+        width: 100%;
+        max-width: 280px;
+        min-height: auto;
+    }
+}
