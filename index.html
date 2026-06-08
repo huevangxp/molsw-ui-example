@@ -226,7 +226,13 @@
           <h2>ຂ່າວສານລ່າສຸດ</h2>
           <p>ຕິດຕາມທຸກໆຂ່າວສານ ແລະ ປະກາດທີ່ສຳຄັນຈາກພວກເຮົາ</p>
         </div>
-        <div class="news-grid">
+
+        <div class="tabs news-tabs" style="max-width: 500px; margin: 0 auto 40px;">
+          <button class="tab-btn active" id="tab-ministry" onclick="switchNewsTab('ministry')">ຂ່າວສານກະຊວງ</button>
+          <button class="tab-btn" id="tab-province" onclick="switchNewsTab('province')">ຂ່າວສານທ້ອງຖິ່ນ (ແຂວງ)</button>
+        </div>
+
+        <div class="news-grid" id="news-ministry">
           <!-- News Item 1 -->
           <div class="news-card card">
             <div class="img-zoom">
@@ -275,6 +281,57 @@
               <p>
                 ທ່ານລັດຖະມົນຕີກະຊວງແຮງງານ ແລະ ສະຫວັດດີການສັງຄົມ
                 ເຂົ້າຮ່ວມພິທີເປີດສູນ...
+              </p>
+              <a href="#" class="read-more">ອ່ານຂ່າວເພີ່ມເຕີມ &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="news-grid" id="news-province" style="display: none;">
+          <!-- Province News Item 1 -->
+          <div class="news-card card">
+            <div class="img-zoom">
+              <img
+                src="https://images.unsplash.com/photo-1577563908411-50cb98976fea?auto=format&fit=crop&w=400&q=80"
+                alt="Province News 1"
+              />
+            </div>
+            <div class="card-content">
+              <h3>ພະແນກ ຮສສ ແຂວງຫຼວງພະບາງ ຈັດກອງປະຊຸມສະຫຼຸບວຽກງານ...</h3>
+              <p>
+                ໃນວັນທີ 15 ກຸມພາ 2026, ພະແນກແຮງງານ ແລະ ສະຫວັດດີການສັງຄົມ ແຂວງຫຼວງພະບາງ...
+              </p>
+              <a href="#" class="read-more">ອ່ານຂ່າວເພີ່ມເຕີມ &rarr;</a>
+            </div>
+          </div>
+          <!-- Province News Item 2 -->
+          <div class="news-card card">
+            <div class="img-zoom">
+              <img
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80"
+                alt="Province News 2"
+              />
+            </div>
+            <div class="card-content">
+              <h3>ລົງຊຸກຍູ້ການສ້າງວຽກເຮັດງານທຳ ຢູ່ແຂວງສະຫວັນນະເຂດ...</h3>
+              <p>
+                ຄະນະທີມງານຈາກກະຊວງ ຮສສ ໄດ້ລົງຊຸກຍູ້ ແລະ ຕິດຕາມໂຄງການສ້າງວຽກເຮັດງານທຳ...
+              </p>
+              <a href="#" class="read-more">ອ່ານຂ່າວເພີ່ມເຕີມ &rarr;</a>
+            </div>
+          </div>
+          <!-- Province News Item 3 -->
+          <div class="news-card card">
+            <div class="img-zoom">
+              <img
+                src="https://images.unsplash.com/photo-1596422846543-74c6e27a69bc?auto=format&fit=crop&w=400&q=80"
+                alt="Province News 3"
+              />
+            </div>
+            <div class="card-content">
+              <h3>ມອບເຄື່ອງຊ່ວຍເຫຼືອຜູ້ປະສົບໄພນໍ້າຖ້ວມ ຢູ່ແຂວງອັດຕະປື...</h3>
+              <p>
+                ຕາງໜ້າກະຊວງແຮງງານ ແລະ ສະຫວັດດີການສັງຄົມ ໄດ້ນຳເອົາເຄື່ອງອຸປະໂພກ-ບໍລິໂພກ...
               </p>
               <a href="#" class="read-more">ອ່ານຂ່າວເພີ່ມເຕີມ &rarr;</a>
             </div>
@@ -613,8 +670,15 @@
       </div>
     </footer>
 
-    <!-- JavaScript logic for Hero Carousel Slider -->
+    <!-- JavaScript logic -->
     <script>
+      function switchNewsTab(tabId) {
+        document.getElementById('news-ministry').style.display = tabId === 'ministry' ? 'grid' : 'none';
+        document.getElementById('news-province').style.display = tabId === 'province' ? 'grid' : 'none';
+        document.getElementById('tab-ministry').classList.toggle('active', tabId === 'ministry');
+        document.getElementById('tab-province').classList.toggle('active', tabId === 'province');
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         const slides = document.querySelectorAll(".hero-slider .slide");
         const prevBtn = document.querySelector(".nav-prev");
