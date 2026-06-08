@@ -114,15 +114,61 @@ ul {
 
 .btn-sm { padding: 8px 20px; font-size: 0.9rem; }
 
-/* Top Bar */
-.top-bar {
-    background-color: var(--primary-blue);
-    color: var(--bg-white);
+/* Top Bar & Announcement */
+.announcement-banner {
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: white;
     padding: 10px 0;
+    font-size: 0.9rem;
+}
+.banner-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.banner-content .badge {
+    background: var(--accent-yellow);
+    color: var(--primary-blue);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.banner-content .text {
+    font-weight: 500;
+}
+.banner-link {
+    color: var(--accent-yellow);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+.banner-link:hover {
+    color: white;
+    gap: 12px;
+}
+
+.top-bar {
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+    padding: 8px 0;
     font-size: 0.85rem;
     font-family: var(--font-en);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid var(--border-color);
 }
+.contact-info i { margin-right: 8px; color: var(--primary-blue); }
 .top-bar-inner {
     display: flex;
     justify-content: space-between;
