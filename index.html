@@ -227,12 +227,8 @@
           <p>ຕິດຕາມທຸກໆຂ່າວສານ ແລະ ປະກາດທີ່ສຳຄັນຈາກພວກເຮົາ</p>
         </div>
 
-        <div class="tabs news-tabs" style="max-width: 500px; margin: 0 auto 40px;">
-          <button class="tab-btn active" id="tab-ministry" onclick="switchNewsTab('ministry')">ຂ່າວສານກະຊວງ</button>
-          <button class="tab-btn" id="tab-province" onclick="switchNewsTab('province')">ຂ່າວສານທ້ອງຖິ່ນ (ແຂວງ)</button>
-        </div>
-
-        <div class="news-grid" id="news-ministry">
+        <h3 style="color: var(--primary-blue); margin-bottom: 25px; font-size: 1.5rem;">ຂ່າວສານກະຊວງ</h3>
+        <div class="news-grid" id="news-ministry" style="margin-bottom: 50px;">
           <!-- News Item 1 -->
           <div class="news-card card">
             <div class="img-zoom">
@@ -287,7 +283,8 @@
           </div>
         </div>
 
-        <div class="news-grid" id="news-province" style="display: none;">
+        <h3 style="color: var(--primary-blue); margin-bottom: 25px; font-size: 1.5rem;">ຂ່າວສານທ້ອງຖິ່ນ (ແຂວງ)</h3>
+        <div class="news-grid" id="news-province">
           <!-- Province News Item 1 -->
           <div class="news-card card">
             <div class="img-zoom">
@@ -672,13 +669,6 @@
 
     <!-- JavaScript logic -->
     <script>
-      function switchNewsTab(tabId) {
-        document.getElementById('news-ministry').style.display = tabId === 'ministry' ? 'grid' : 'none';
-        document.getElementById('news-province').style.display = tabId === 'province' ? 'grid' : 'none';
-        document.getElementById('tab-ministry').classList.toggle('active', tabId === 'ministry');
-        document.getElementById('tab-province').classList.toggle('active', tabId === 'province');
-      }
-
       document.addEventListener("DOMContentLoaded", () => {
         const slides = document.querySelectorAll(".hero-slider .slide");
         const prevBtn = document.querySelector(".nav-prev");
